@@ -1,0 +1,31 @@
+###############################################################
+# terraform.tfvars.example
+# Copy to terraform.tfvars and fill in your values.
+# NEVER commit terraform.tfvars to Git — add it to .gitignore
+###############################################################
+
+aws_region   = "us-east-1"
+project_name = "aws-iac-demo"
+environment  = "dev"
+
+# VPC
+vpc_cidr             = "10.0.0.0/16"
+public_subnet_cidrs  = ["10.0.1.0/24"]
+private_subnet_cidrs = ["10.0.2.0/24", "10.0.3.0/24"]
+availability_zones   = ["us-east-1a", "us-east-1b"]
+
+# EC2
+instance_type    = "t3.micro"
+key_pair_name    = ""           # Set to your key pair name, e.g. "my-key"
+allowed_ssh_cidr = "0.0.0.0/0" # Replace with your IP: "1.2.3.4/32"
+
+# RDS
+db_engine         = "postgres"
+db_engine_version = "15.4"
+db_instance_class = "db.t3.micro"
+db_name           = "appdb"
+db_username       = "dbadmin"
+# db_password — Set via environment variable to avoid storing in files:
+#   export TF_VAR_db_password="YourStrongPassword123!"
+db_allocated_storage = 20
+db_multi_az          = false   # Set to true for production
