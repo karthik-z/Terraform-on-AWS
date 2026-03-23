@@ -279,12 +279,6 @@ terraform graph | dot -Tpng > graph.png           # visualize dependency graph
 
 ---
 
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE) for details.
-
----
-
 ## 🙋 Author
 
 **Karthik**
